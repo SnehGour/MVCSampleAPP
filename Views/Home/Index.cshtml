@@ -1,0 +1,32 @@
+﻿@model MVCSampleAPP.ViewModel.CustomerViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Connection Status: @Model.Connection</h1>
+
+@if (Model.Customers.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Customer item in Model.Customers)
+            {
+                <tr>
+                    <td>@item.CustomerId</td>
+                    <td>@item.Name</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No data available.</p>
+}
